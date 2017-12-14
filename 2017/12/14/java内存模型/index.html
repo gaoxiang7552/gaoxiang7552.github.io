@@ -47,7 +47,7 @@
     
     <title>
         
-            归档: 2017 | 
+            Java内存模型 | 
         
         远方
     </title>
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="远方">
-    <meta name="msapplication-starturl" content="http://gaoxiang.win/archives/2017/">
+    <meta name="msapplication-starturl" content="http://gaoxiang.win/2017/12/14/java内存模型/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="远方">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://gaoxiang.win/archives/2017/">
+    <meta property="og:url" content="http://gaoxiang.win/2017/12/14/java内存模型/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | 远方">
+    <meta property="og:title" content="Java内存模型 | 远方">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="生活不止眼前的苟且,还是诗和远方">
     
 
+    
+        <meta property="article:published_time" content="Thu Dec 14 2017 23:08:29 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 14 2017 23:07:36 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://gaoxiang.win/archives/2017/index.html" />
+        <link rel="canonical" href="http://gaoxiang.win/2017/12/14/java内存模型/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -292,149 +295,293 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java内存模型"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#Java&#x5185;&#x5B58;&#x6A21;&#x578B;" class="headerlink" title="Java&#x5185;&#x5B58;&#x6A21;&#x578B;"></a>Java&#x5185;&#x5B58;&#x6A21;&#x578B;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-内存模型图"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#1-&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;" class="headerlink" title="1. &#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;"></a><a href="#1-&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;" title="1. &#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;"></a>1. <strong>&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;</strong></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-详细介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#2-&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;" class="headerlink" title="2. &#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;"></a><a href="#2-&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;" title="2. &#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;"></a>2. <strong>&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</strong></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-程序计数器PC"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text"><a href="#1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC" class="headerlink" title="1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC"></a><a href="#1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC" title="1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC"></a>1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-虚拟机栈"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text"><a href="#2-&#x865A;&#x62DF;&#x673A;&#x6808;" class="headerlink" title="2. &#x865A;&#x62DF;&#x673A;&#x6808;"></a><a href="#2-&#x865A;&#x62DF;&#x673A;&#x6808;" title="2. &#x865A;&#x62DF;&#x673A;&#x6808;"></a>2. &#x865A;&#x62DF;&#x673A;&#x6808;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-本地方法栈"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text"><a href="#3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" class="headerlink" title="3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a><a href="#3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" title="3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a>3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-方法区"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text"><a href="#4-&#x65B9;&#x6CD5;&#x533A;" class="headerlink" title="4. &#x65B9;&#x6CD5;&#x533A;"></a><a href="#4-&#x65B9;&#x6CD5;&#x533A;" title="4. &#x65B9;&#x6CD5;&#x533A;"></a>4. &#x65B9;&#x6CD5;&#x533A;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-Java堆"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text"><a href="#5-Java&#x5806;" class="headerlink" title="5. Java&#x5806;"></a><a href="#5-Java&#x5806;" title="5. Java&#x5806;"></a>5. Java&#x5806;</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/14/java多线程同步方法/">java多线程同步方法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/14/java多线程同步方法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="高翔's avatar">
-            </div>
-            <div>
-                <strong>高翔</strong>
-                <span>12月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/14/java内存模型/">Java内存模型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/14/java内存模型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="高翔's avatar">
-            </div>
-            <div>
-                <strong>高翔</strong>
-                <span>12月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Java内存模型
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>高翔</strong>
+        <span>12月 14, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3awZIqIQxAUf//p9/bzka9gRZ7pg4rS7toDgsSQx7//vR44OHh4eHh4eHh3Yz3yCNN/eT5n9+Uzztrw8PDwzvDK4su379+/evn+3vfrAEPDw/vIK8s69nz04N+LWykLcPDw8O7Ma8k1q/nnFLx8PDwfi+vgEvCPaXi4eHh3Y1X/vCvBYZpav61WgseHh5e5vVLpvOfj97v4eHh4QXeuKUptxT0FHkaDN6sEA8PD+/DvH4Qr5UJ9gPMtAkMDw8P7wyvlGL7ZdVaOaMEia1/DHh4eHiX8l6Dy3E8Tb77xvV0HA8PD+8MryyulxumKXJ/b0+s8fDw8M7zrgoMHVze29eAh4eHd4a3ONGw5Np/3Sox4+Hh4R3kTQ/o6fV/SaPXNhcPDw/vJK8n0DuNBb3IW2beah3Aw8PD2+b1S/r9Q7wUhaelkHFKjYeHh3cRr1/Y9zLBWqiYBi08PDy887ySzq6l171I0cNDChV4eHh4H+aVqa9qL5hekk3ZeHh4eCd515YJyrG+tmUl2ODh4eF9mrfzsk4qJd2dZiw8PDy8b/Eew/E6wBTqtF0grQEPDw/vBrxp08B0ufuXZHh4eHjf4vXjuBQgdhoL1kIRHh4e3hnedKw1VPVyw36yjoeHh/dp3lWlh9dHfFluT7LHxQg8PDy8D/B6MJiGgfLNWmB4mqDj4eHhHeT1A3pamOiNUz1E4eHh4f1G3loBYieBTpuLh4eHd2NeOe6nl14lwLzZUDw8PLyDvJ1Lr2kJuJd6yzx4eHh453n7JYBylE8bttbCAx4eHt6neX9v4OHh4eHh4eHh3WD8B6X8FhGmEiWnAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java内存模型&url=http://gaoxiang.win/2017/12/14/java内存模型/index.html&pic=http://gaoxiang.win/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=远方&title=Java内存模型&summary=生活不止眼前的苟且,还是诗和远方&pics=http://gaoxiang.win/img/favicon.png&url=http://gaoxiang.win/2017/12/14/java内存模型/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><ul>
+<li>一般地大家讲到的Java内存其实就是Jvm内存</li>
+<li>Java代码是运行在Java虚拟机之上的，由Java虚拟机通过解释执行(解释器)或编译执行(即时编译器)来完成，故Java内存模型，也就是指Java虚拟机的运行时内存模型。</li>
+</ul>
+<hr>
+<h2 id="1-内存模型图"><a href="#1-内存模型图" class="headerlink" title="1. 内存模型图"></a><a href="#1-内存模型图" title="1. 内存模型图"></a>1. <strong>内存模型图</strong></h2><p><a href="http://www.cssxt.com/uploadfile/2017/0723/20170723100414755.jpg" title="gc内存模型" target="_blank" rel="noopener"><img src="http://www.cssxt.com/uploadfile/2017/0723/20170723100414755.jpg" alt="gc内存模型"></a></p>
+<h2 id="2-详细介绍"><a href="#2-详细介绍" class="headerlink" title="2. 详细介绍"></a><a href="#2-详细介绍" title="2. 详细介绍"></a>2. <strong>详细介绍</strong></h2><h3 id="1-程序计数器PC"><a href="#1-程序计数器PC" class="headerlink" title="1. 程序计数器PC"></a><a href="#1-程序计数器PC" title="1. 程序计数器PC"></a>1. 程序计数器PC</h3><ul>
+<li>程序计数器PC，当前线程所执行的字节码行号指示器。每个线程都有自己计数器，是私有内存空间，该区域是整个内存中较小的一块。</li>
+<li>当线程正在执行一个Java方法时，PC计数器记录的是正在执行的虚拟机字节码的地址；当线程正在执行的一个Native方法时，PC计数器则为空（Undefined）。<h3 id="2-虚拟机栈"><a href="#2-虚拟机栈" class="headerlink" title="2. 虚拟机栈"></a><a href="#2-虚拟机栈" title="2. 虚拟机栈"></a>2. 虚拟机栈</h3></li>
+</ul>
+<p>虚拟机栈，生命周期与线程相同，是Java方法执行的内存模型。每个方法(不包含native方法)执行的同时都会创建一个栈帧结构，方法执行过程，对应着虚拟机栈的入栈到出栈的过程。</p>
+<p><strong>栈帧(Stack Frame)结构</strong><br>栈帧是用于支持虚拟机进行方法执行的数据结构，是属性运行时数据区的虚拟机站的栈元素。见上图， 栈帧包括：</p>
+<ul>
+<li>局部变量表 (locals大小，编译期确定)，一组变量存储空间， 容量以slot为最小单位。</li>
+<li>操作栈(stack大小，编译期确定)，操作栈元素的数据类型必须与字节码指令序列严格匹配</li>
+<li>动态连接， 指向运行时常量池中该栈帧所属方法的引用，为了 动态连接使用。<br>前面的解析过程其实是静态解析；<br>对于运行期转化为直接引用，称为动态解析。</li>
+<li>方法返回地址<br>正常退出，执行引擎遇到方法返回的字节码，将返回值传递给调用者<br>异常退出，遇到Exception,并且方法未捕捉异常，那么不会有任何返回值。</li>
+<li>额外附加信息，虚拟机规范没有明确规定，由具体虚拟机实现。<br><strong>异常(Exception)</strong><br>Java虚拟机规范规定该区域有两种异常：</li>
+<li>StackOverFlowError：当线程请求栈深度超出虚拟机栈所允许的深度时抛出</li>
+<li><p>OutOfMemoryError：当Java虚拟机动态扩展到无法申请足够内存时抛出</p>
+<h3 id="3-本地方法栈"><a href="#3-本地方法栈" class="headerlink" title="3. 本地方法栈"></a><a href="#3-本地方法栈" title="3. 本地方法栈"></a>3. 本地方法栈</h3></li>
+</ul>
+<p>本地方法栈则为虚拟机使用到的Native方法提供内存空间，而前面讲的虚拟机栈式为Java方法提供内存空间。有些虚拟机的实现直接把本地方法栈和虚拟机栈合二为一，比如非常典型的Sun HotSpot虚拟机。<br><strong>异常(Exception)</strong><br>Java虚拟机规范规定该区域可抛出StackOverFlowError和OutOfMemoryError。</p>
+<h3 id="4-方法区"><a href="#4-方法区" class="headerlink" title="4. 方法区"></a><a href="#4-方法区" title="4. 方法区"></a>4. 方法区</h3><p>方法区主要存放的是已被虚拟机加载的类信息、常量、静态变量、编译器编译后的代码等数据。GC在该区域出现的比较少。<br><strong>异常(Exception)</strong><br>Java虚拟机规范规定该区域可抛出OutOfMemoryError。<br><strong>运行时常量池</strong><br>运行时常量池也是方法区的一部分，用于存放编译器生成的各种字面量和符号引用。运行时常量池除了编译期产生的Class文件的常量池，还可以在运行期间，将新的常量加入常量池，比较常见的是String类的intern()方法。</p>
+<ul>
+<li>字面量：与Java语言层面的常量概念相近，包含文本字符串、声明为final的常量值等。</li>
+<li>符号引用：编译语言层面的概念，包括以下3类：</li>
+</ul>
+<ol>
+<li>类和接口的全限定名</li>
+<li>字段的名称和描述符</li>
+<li><p>方法的名称和描述符<br>但是该区域不会抛出OutOfMemoryError异常。</p>
+<h3 id="5-Java堆"><a href="#5-Java堆" class="headerlink" title="5. Java堆"></a><a href="#5-Java堆" title="5. Java堆"></a>5. Java堆</h3></li>
+</ol>
+<p>Java堆，是Java虚拟机管理的最大的一块内存，也是GC的主战场，里面存放的是几乎所有的对象实例和数组数据。JIT编译器有栈上分配、标量替换等优化技术的实现导致部分对象实例数据不存在Java堆，而是栈内存。</p>
+<ul>
+<li>从内存回收角度，Java堆被分为新生代和老年代；这样划分的好处是为了更快的回收内存；</li>
+<li>从内存分配角度，Java堆可以划分出线程私有的分配缓冲区(Thread Local Allocation Buffer,TLAB)；这样划分的好处是为了更快的分配内存；<br>对象创建的过程是在堆上分配着实例对象，那么对象实例的具体结构如下：<br><a href="http://wangnan.tech/post/java-memory/02.png" title="对象实例结构" target="_blank" rel="noopener"><img src="http://wangnan.tech/post/java-memory/02.png" alt="对象实例结构"></a><br>对于填充数据不是一定存在的，仅仅是为了字节对齐。HotSpot VM的自动内存管理要求对象起始地址必须是8字节的整数倍。对象头本身是8的倍数，当对象的实例数据不是8的倍数，便需要填充数据来保证8字节的对齐。该功能类似于高速缓存行的对齐。</li>
+</ul>
+<p>另外，关于在堆上内存分配是并发进行的，虚拟机采用CAS加失败重试保证原子操作，或者是采用每个线程预先分配TLAB内存.</p>
+<p><strong>异常(Exception)</strong><br>Java虚拟机规范规定该区域可抛出OutOfMemoryError。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            此文章为<a href="www.gaoxiang.win" target="_blank">高翔的博客</a>原创,转载请注明
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://gaoxiang.win/2017/12/14/java内存模型/">http://gaoxiang.win/2017/12/14/java内存模型/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjQwMC84OTYx">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/14/java多线程同步方法/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

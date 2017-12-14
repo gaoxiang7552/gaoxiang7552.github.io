@@ -47,7 +47,7 @@
     
     <title>
         
-            归档: 2017 | 
+            java多线程同步方法 | 
         
         远方
     </title>
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="远方">
-    <meta name="msapplication-starturl" content="http://gaoxiang.win/archives/2017/">
+    <meta name="msapplication-starturl" content="http://gaoxiang.win/2017/12/14/java多线程同步方法/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="远方">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://gaoxiang.win/archives/2017/">
+    <meta property="og:url" content="http://gaoxiang.win/2017/12/14/java多线程同步方法/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | 远方">
+    <meta property="og:title" content="java多线程同步方法 | 远方">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="生活不止眼前的苟且,还是诗和远方">
     
 
+    
+        <meta property="article:published_time" content="Thu Dec 14 2017 23:08:29 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 14 2017 23:08:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,7 +251,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://gaoxiang.win/archives/2017/index.html" />
+        <link rel="canonical" href="http://gaoxiang.win/2017/12/14/java多线程同步方法/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -292,149 +295,273 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java多线程同步方法"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#java&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x65B9;&#x6CD5;" class="headerlink" title="java&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x65B9;&#x6CD5;"></a>java&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x65B9;&#x6CD5;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#&#x540C;&#x6B65;&#x65B9;&#x6CD5;" class="headerlink" title="&#x540C;&#x6B65;&#x65B9;&#x6CD5;"></a><a href="#&#x540C;&#x6B65;&#x65B9;&#x6CD5;" title="&#x540C;&#x6B65;&#x65B9;&#x6CD5;"></a>&#x540C;&#x6B65;&#x65B9;&#x6CD5;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步代码块"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;" class="headerlink" title="&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;"></a><a href="#&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;" title="&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;"></a>&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用特殊域变量-Volatile-实现线程同步"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"><a href="#&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x57DF;&#x53D8;&#x91CF;-Volatile-&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" class="headerlink" title="&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x57DF;&#x53D8;&#x91CF;(Volatile)&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a><a href="#&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x57DF;&#x53D8;&#x91CF;-Volatile-&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" title="&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x57DF;&#x53D8;&#x91CF;(Volatile)&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a>&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x57DF;&#x53D8;&#x91CF;(Volatile)&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用重入锁实现线程同步"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"><a href="#&#x4F7F;&#x7528;&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" class="headerlink" title="&#x4F7F;&#x7528;&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a><a href="#&#x4F7F;&#x7528;&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" title="&#x4F7F;&#x7528;&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a>&#x4F7F;&#x7528;&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用局部变量实现线程同步"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"><a href="#&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" class="headerlink" title="&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a><a href="#&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;" title="&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;"></a>&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/14/java多线程同步方法/">java多线程同步方法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/14/java多线程同步方法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="高翔's avatar">
-            </div>
-            <div>
-                <strong>高翔</strong>
-                <span>12月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/14/java内存模型/">Java内存模型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/14/java内存模型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="高翔's avatar">
-            </div>
-            <div>
-                <strong>高翔</strong>
-                <span>12月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                java多线程同步方法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>高翔</strong>
+        <span>12月 14, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzElEQVR42u3aQU4DMQwF0Ln/pWGLhGj/d1oYkpdVhaYZv7Bwbef6OHJd2NjY2NjY2NjY2LdkX/F6sumXZ3761vdnfton+W4bMzY2Nvbe7JyUBPc4iBXSUszY2NjYB7CT17SJpD2U/NDzmLGxsbGxE/Ys0ORQ8rIHGxsbGztnz9JY/ndsbGxs7Bk7b/2/73OSzP6gl4aNjY19e3abhO7w+Vfn29jY2Ng3ZtdXGJdfn6ecNtEWly+xsbGxN2LPmjuP2z3rzaC3DIyxsbGxN2W3oc8Khnafx1ElDSlsbGzsc9hJymmbO20ZkyBnowVsbGzsE9gJ78kAdRTEeumSXCTCxsbGPoe9kmwelwp5cz95Y16KYGNjY5/Dnl1tzNv012i1iXM46MXGxsbegr3yQ38lnbQjgfagsbGxsU9jF2mgfOV6M6ge6GJjY2Mfxs5HuW0ran2cMGtFvaACw8bGxv5X7HajpVFrObhtR79LeRsbGxt7C3ayad4qmg1924MuhsTY2NjYm7LblNOOb9sDnTWw6suX2NjY2Bux25FA2zDKL+WsFDzRntjY2NgHsNuhbN2gf1F506ZebGxs7BPYeSj5hch88DArWuqkiI2Njb0pu33NrERpE1V7xHUCw8bGxt6OvZLA8oKkDbrlFZcvsbGxsTdl50VC/t2kSFgfBmNjY2Njtw2gvJxow00u6OQ7YGNjY5/Jzn/0z8qPPAW2A+Mn/wxsbGzsA9hXsJLDyouZWUobRoiNjY29KbtdsxbSjJTvHLWfsLGxsTdlt4lh1pDKd3hHkwsbGxv7BPbKCLa9fJOnrvw4ovYWNjY29gHslcZQW0Lkw4lrYWFjY2Njz0qL5Aja5v5swIyNjY2NnTR0VlpU7Q75JR5sbGzsM9mzgqEd1rYNqZcdKDY2NvbW7NemnNnlntnzS00lbGxs7C3Y5yxsbGxsbGxsbGzs26xPpMKkt6B3v1IAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=java多线程同步方法&url=http://gaoxiang.win/2017/12/14/java多线程同步方法/index.html&pic=http://gaoxiang.win/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=远方&title=java多线程同步方法&summary=生活不止眼前的苟且,还是诗和远方&pics=http://gaoxiang.win/img/favicon.png&url=http://gaoxiang.win/2017/12/14/java多线程同步方法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="java多线程同步方法"><a href="#java多线程同步方法" class="headerlink" title="java多线程同步方法"></a>java多线程同步方法</h1><h2 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a><a href="#同步方法" title="同步方法"></a>同步方法</h2><p>即有synchronized关键字修饰的方法。 由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。在调用该方法前，需要获得内置锁，否则就处于阻塞状态。<br>synchronized关键字也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个方法</p>
+<h2 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a><a href="#同步代码块" title="同步代码块"></a>同步代码块</h2><p>即有synchronized关键字修饰的语句块。被该关键字修饰的语句块会自动被加上内置锁，从而实现同步<br>注：同步是一种高开销的操作，因此应该尽量减少同步的内容。通常没有必要同步整个方法，使用synchronized代码块同步关键代码即可。</p>
+<h2 id="使用特殊域变量-Volatile-实现线程同步"><a href="#使用特殊域变量-Volatile-实现线程同步" class="headerlink" title="使用特殊域变量(Volatile)实现线程同步"></a><a href="#使用特殊域变量-Volatile-实现线程同步" title="使用特殊域变量(Volatile)实现线程同步"></a>使用特殊域变量(Volatile)实现线程同步</h2><ul>
+<li>volatile关键字为域变量的访问提供了一种免锁机制</li>
+<li>使用volatile修饰域相当于告诉虚拟机该域可能会被其他线程更新</li>
+<li>因此每次使用该域就要重新计算，而不是使用寄存器中的值</li>
+<li>volatile不会提供任何原子操作，它也不能用来修饰final类型的变量</li>
+</ul>
+<p>就是因为volatile不能保证原子操作导致的，因此volatile不能代替synchronized。此外volatile会组织编译器对代码优化，因此能不使用它就不适用它吧。它的原理是每次要线程要访问volatile修饰的变量时都是从内存中读取，而不是存缓存当中读取，因此每个线程访问到的变量值都是一样的。这样就保证了同步。</p>
+<h2 id="使用重入锁实现线程同步"><a href="#使用重入锁实现线程同步" class="headerlink" title="使用重入锁实现线程同步"></a><a href="#使用重入锁实现线程同步" title="使用重入锁实现线程同步"></a>使用重入锁实现线程同步</h2><p>在JavaSE5.0中新增了一个java.util.concurrent包来支持同步。ReentrantLock类是可重入、互斥、实现了Lock接口的锁， 它与使用synchronized方法和快具有相同的基本行为和语义，并且扩展了其能力。<br>ReenreantLock类的常用方法有：</p>
+<ul>
+<li>ReentrantLock() : 创建一个ReentrantLock实例</li>
+<li>lock() : 获得锁</li>
+<li><p>unlock() : 释放锁<br>如果synchronized关键字能满足用户的需求，就用synchronized，因为它能简化代码 。如果需要更高级的功能，就用ReentrantLock类，此时要注意及时释放锁，否则会出现死锁，通常在finally代码释放锁</p>
+<h2 id="使用局部变量实现线程同步"><a href="#使用局部变量实现线程同步" class="headerlink" title="使用局部变量实现线程同步"></a><a href="#使用局部变量实现线程同步" title="使用局部变量实现线程同步"></a>使用局部变量实现线程同步</h2><p>如果使用ThreadLocal管理变量，则每一个使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。现在明白了吧，原来每个线程运行的都是一个副本，也就是说存钱和取钱是两个账户，知识名字相同而已。所以就会发生上面的效果。<br><strong>ThreadLocal与同步机制</strong></p>
+</li>
+</ul>
+<ol>
+<li>ThreadLocal与同步机制都是为了解决多线程中相同变量的访问冲突问题</li>
+<li>前者采用以”空间换时间”的方法，后者采用以”时间换空间”的方式<br>参考：<br><a href="http://www.codeceo.com/article/java-multi-thread-sync.html" target="_blank" rel="noopener">Java 多线程同步的五种方法</a></li>
+</ol>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            此文章为<a href="www.gaoxiang.win" target="_blank">高翔的博客</a>原创,转载请注明
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://gaoxiang.win/2017/12/14/java多线程同步方法/">http://gaoxiang.win/2017/12/14/java多线程同步方法/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjQwMC84OTYx">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/14/java内存模型/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
