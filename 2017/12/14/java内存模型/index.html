@@ -89,6 +89,10 @@
     
 
     
+        
+            <link rel="stylesheet" href="/css/fontawesome.min.css">
+        
+    
 
     <!-- Config CSS -->
 
@@ -165,12 +169,12 @@
 <!-- Theme Background Related-->
 
     <style>
-      body{
+      body {
         background-color: #F5F5F5;
       }
 
       /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
         background-color: #fff;
       }
     </style>
@@ -278,8 +282,105 @@
 
 
     
-        <body id="scheme-Paradox" class="lazy">
+        <body id="scheme-Isolation" class="lazy">
             <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+                    <!-- Isolation Header -->
+                    <header class="header">
+    <div class="header-wrapper">
+        <!-- Header Copyright -->
+        <div class="header-copyright">
+            <div class="header-site">
+                ©&nbsp;
+                <script type="text/javascript">
+                    var fd = new Date();
+                    document.write(fd.getFullYear());
+                </script>
+                &nbsp;远方
+            </div>
+            <!--
+            I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+            It will not impact the appearance and can give developers a lot of support :)
+
+            很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+            它不会影响美观并可以给开发者很大的支持。 :)
+            -->
+            <div>
+                Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
+                <br>
+                Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
+            </div>
+        </div>
+
+        <!-- Header Title -->
+        <span class="header-title header-item">
+            <a href="/" title="远方">
+                远方
+            </a>
+        </span>
+
+        <p class="header-slogan header-item">
+        
+            
+                Hi, nice to meet you
+            
+        
+        </p>
+
+        <!-- Header Nav -->
+        <nav class="header-nav header-item">
+            <span class="header-nav-item">
+                <a href="/" title="Home">
+                    <span>主页</span>
+                </a>
+            </span>
+
+            <!-- Pages  -->
+            
+            
+        </nav>
+
+        <!-- Header SNS -->
+        <div class="header-item header-sns_list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/gxxxxxxxxxx" target="_blank">
+            <i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
+        </a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/gaoxiang7552" target="_blank">
+            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+        </a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+    </div>
+</header>
+
                 
 
                 <!-- Main Container -->
@@ -289,45 +390,10 @@
                     <div id="top"></div>
 
                     
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
 
                     <!-- Post TOC -->
 
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java内存模型"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#Java&#x5185;&#x5B58;&#x6A21;&#x578B;" class="headerlink" title="Java&#x5185;&#x5B58;&#x6A21;&#x578B;"></a>Java&#x5185;&#x5B58;&#x6A21;&#x578B;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-内存模型图"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#1-&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;" class="headerlink" title="1. &#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;"></a><a href="#1-&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;" title="1. &#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;"></a>1. <strong>&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;</strong></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-详细介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#2-&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;" class="headerlink" title="2. &#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;"></a><a href="#2-&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;" title="2. &#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;"></a>2. <strong>&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</strong></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-程序计数器PC"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text"><a href="#1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC" class="headerlink" title="1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC"></a><a href="#1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC" title="1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC"></a>1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;PC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-虚拟机栈"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text"><a href="#2-&#x865A;&#x62DF;&#x673A;&#x6808;" class="headerlink" title="2. &#x865A;&#x62DF;&#x673A;&#x6808;"></a><a href="#2-&#x865A;&#x62DF;&#x673A;&#x6808;" title="2. &#x865A;&#x62DF;&#x673A;&#x6808;"></a>2. &#x865A;&#x62DF;&#x673A;&#x6808;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-本地方法栈"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text"><a href="#3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" class="headerlink" title="3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a><a href="#3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" title="3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a>3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-方法区"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text"><a href="#4-&#x65B9;&#x6CD5;&#x533A;" class="headerlink" title="4. &#x65B9;&#x6CD5;&#x533A;"></a><a href="#4-&#x65B9;&#x6CD5;&#x533A;" title="4. &#x65B9;&#x6CD5;&#x533A;"></a>4. &#x65B9;&#x6CD5;&#x533A;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-Java堆"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text"><a href="#5-Java&#x5806;" class="headerlink" title="5. Java&#x5806;"></a><a href="#5-Java&#x5806;" title="5. Java&#x5806;"></a>5. Java&#x5806;</span></a></li></ol></li></ol></li></ol>
-    </ul>
-    
-
 
 
 
@@ -341,136 +407,37 @@
 
                 <!-- Post Header(Thumbnail & Title) -->
                 
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
 
-        
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
     
-            <p class="article-headline-p">
-                Java内存模型
-            </p>
+        <!-- Post Header Info -->
+        <div class="post-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="高翔's avatar">
+            <span class="name-span">高翔</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
         </div>
 
 
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>高翔</strong>
-        <span>12月 14, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3awZIqIQxAUf//p9/bzka9gRZ7pg4rS7toDgsSQx7//vR44OHh4eHh4eHh3Yz3yCNN/eT5n9+Uzztrw8PDwzvDK4su379+/evn+3vfrAEPDw/vIK8s69nz04N+LWykLcPDw8O7Ma8k1q/nnFLx8PDwfi+vgEvCPaXi4eHh3Y1X/vCvBYZpav61WgseHh5e5vVLpvOfj97v4eHh4QXeuKUptxT0FHkaDN6sEA8PD+/DvH4Qr5UJ9gPMtAkMDw8P7wyvlGL7ZdVaOaMEia1/DHh4eHiX8l6Dy3E8Tb77xvV0HA8PD+8MryyulxumKXJ/b0+s8fDw8M7zrgoMHVze29eAh4eHd4a3ONGw5Np/3Sox4+Hh4R3kTQ/o6fV/SaPXNhcPDw/vJK8n0DuNBb3IW2beah3Aw8PD2+b1S/r9Q7wUhaelkHFKjYeHh3cRr1/Y9zLBWqiYBi08PDy887ySzq6l171I0cNDChV4eHh4H+aVqa9qL5hekk3ZeHh4eCd515YJyrG+tmUl2ODh4eF9mrfzsk4qJd2dZiw8PDy8b/Eew/E6wBTqtF0grQEPDw/vBrxp08B0ufuXZHh4eHjf4vXjuBQgdhoL1kIRHh4e3hnedKw1VPVyw36yjoeHh/dp3lWlh9dHfFluT7LHxQg8PDy8D/B6MJiGgfLNWmB4mqDj4eHhHeT1A3pamOiNUz1E4eHh4f1G3loBYieBTpuLh4eHd2NeOe6nl14lwLzZUDw8PLyDvJ1Lr2kJuJd6yzx4eHh453n7JYBylE8bttbCAx4eHt6neX9v4OHh4eHh4eHh3WD8B6X8FhGmEiWnAAAAAElFTkSuQmCC">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-        
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
-                    </span>
-                </li>
-            </a>
-        
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java内存模型&url=http://gaoxiang.win/2017/12/14/java内存模型/index.html&pic=http://gaoxiang.win/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=远方&title=Java内存模型&summary=生活不止眼前的苟且,还是诗和远方&pics=http://gaoxiang.win/img/favicon.png&url=http://gaoxiang.win/2017/12/14/java内存模型/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
-</div>
 
                 
 
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><ul>
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                Java内存模型
+            </p>
+            <h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><ul>
 <li>一般地大家讲到的Java内存其实就是Jvm内存</li>
 <li>Java代码是运行在Java虚拟机之上的，由Java虚拟机通过解释执行(解释器)或编译执行(即时编译器)来完成，故Java内存模型，也就是指Java虚拟机的运行时内存模型。</li>
 </ul>
@@ -512,23 +479,25 @@
 <p>另外，关于在堆上内存分配是并发进行的，虚拟机采用CAS加失败重试保证原子操作，或者是采用每个线程预先分配TLAB内存.</p>
 <p><strong>异常(Exception)</strong><br>Java虚拟机规范规定该区域可抛出OutOfMemoryError。</p>
 
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
+            
+                <blockquote>
+                    <p>
                          
                             此文章为<a href="www.gaoxiang.win" target="_blank">高翔的博客</a>原创,转载请注明
-                        </strong>
+                        
                         <br>
-                        <strong>本文链接：</strong><a href="http://gaoxiang.win/2017/12/14/java内存模型/">http://gaoxiang.win/2017/12/14/java内存模型/</a>
+                        本文链接： http://gaoxiang.win/2017/12/14/java内存模型/
                     </p>
                 </blockquote>
-        
-    
-
+            
+        </div>
     
 </div>
 
 
+                
+                    <!-- Paradox Post Info -->
+                    
                 
 
                 <!-- Post Comments -->
@@ -563,19 +532,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/12/14/java多线程同步方法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/12/14/java多线程同步方法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -585,265 +554,11 @@
 
 
                     
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="高翔's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        gaoxiang7552@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="gaoxiang7552@gmail.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                
-            </ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Pages  -->
-    
-
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">2</span>
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-        <a href="https://weibo.com/gxxxxxxxxxx" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/gaoxiang7552" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>远方
-            
-                <br>
-                
-                    无备案,裸奔中
-                
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
     
 </footer>
 
@@ -932,6 +647,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 <!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?[object Object]');
+    });
+</script>
 
 
 <script type="text/ls-javascript" id="lazy-load">
