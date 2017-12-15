@@ -53,7 +53,7 @@
     
     <entry>
       <title><![CDATA[java多线程同步方法]]></title>
-      <url>/2017/12/14/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</url>
+      <url>/2016/06/01/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<h1 id="java多线程同步方法"><a href="#java多线程同步方法" class="headerlink" title="java多线程同步方法"></a>java多线程同步方法</h1><h2 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a><a href="#同步方法" title="同步方法"></a>同步方法</h2><p>即有synchronized关键字修饰的方法。 由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。在调用该方法前，需要获得内置锁，否则就处于阻塞状态。<br>synchronized关键字也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个方法</p>
 <h2 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a><a href="#同步代码块" title="同步代码块"></a>同步代码块</h2><p>即有synchronized关键字修饰的语句块。被该关键字修饰的语句块会自动被加上内置锁，从而实现同步<br>注：同步是一种高开销的操作，因此应该尽量减少同步的内容。通常没有必要同步整个方法，使用synchronized代码块同步关键代码即可。</p>
 <h2 id="使用特殊域变量-Volatile-实现线程同步"><a href="#使用特殊域变量-Volatile-实现线程同步" class="headerlink" title="使用特殊域变量(Volatile)实现线程同步"></a><a href="#使用特殊域变量-Volatile-实现线程同步" title="使用特殊域变量(Volatile)实现线程同步"></a>使用特殊域变量(Volatile)实现线程同步</h2><ul>
@@ -75,13 +75,41 @@
 <li>ThreadLocal与同步机制都是为了解决多线程中相同变量的访问冲突问题</li>
 <li>前者采用以”空间换时间”的方法，后者采用以”时间换空间”的方式<br>参考：<br><a href="http://www.codeceo.com/article/java-multi-thread-sync.html" target="_blank" rel="noopener">Java 多线程同步的五种方法</a></li>
 </ol>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="//music.163.com/outchain/player?type=2&id=28694864&auto=1&height=66"></iframe>
 ]]></content>
       
+        <categories>
+            
+            <category> java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
         
     </entry>
     
   
   
+    
+    <entry>
+      <title></title>
+      <url>/404.html</url>
+      <content type="html"><![CDATA[<p>layout: 404<br>title: “[404]”<br>description: “May the Force be with you :&#41;”</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于我]]></title>
+      <url>/about/index.html</url>
+      <content type="html"></content>
+    </entry>
     
   
 </search>
